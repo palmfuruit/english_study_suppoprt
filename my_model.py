@@ -5,10 +5,8 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 def predict_labels(texts, threshold=0.5):
     # モデルとトークナイザーのロード
-    print('modelとtokenizerのロード ---start---')
     model = AutoModelForSequenceClassification.from_pretrained('./model')
     tokenizer = AutoTokenizer.from_pretrained('./tokenizer')
-    print('modelとtokenizerのロード ---end---')
 
     model = model.to('cpu')
 
